@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 
-const Login = () => {
+const Login = ({handleLogin}) => {
      const[email,setEmail] = useState('');
      const[password,setPassword]=useState('');
+
+     
    
      //this function is used as an eventlistener to know that our form is submitted
     const submitHandler =(e)=>{
         e.preventDefault();
+        handleLogin(email,password)
         console.log("email is",email)
         console.log("password is",password)
         setEmail("")
